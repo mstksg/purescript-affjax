@@ -32,7 +32,8 @@ export function _ajax(platformSpecificDriver, timeoutErrorMessageIdent, requestF
             var i = header.indexOf(":");
             return mkHeader(header.substring(0, i))(header.substring(i + 2));
           }),
-        body: xhr.response
+        body: xhr.response,
+        credentials: 'include'
       });
     };
     xhr.responseType = options.responseType;
